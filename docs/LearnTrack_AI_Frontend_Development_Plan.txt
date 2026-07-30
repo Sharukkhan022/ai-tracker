@@ -1,0 +1,181 @@
+LearnTrack AI - Frontend Development Plan
+
+This document presents a recommended frontend page structure for the LearnTrack AI project. The pages extend the functional modules defined in the project documents into a complete user interface suitable for a final-year college project.
+
+Module 1 – Authentication (4 Pages)
+
+Splash Screen
+
+Displays the application logo, performs initial loading, and checks whether the user is already authenticated before navigating to Login or Dashboard.
+
+Login
+
+Allows existing users to sign in using email and password. Includes Remember Me and Forgot Password options.
+
+Register
+
+Allows new users to create an account by entering name, email, password, and confirmation password.
+
+Forgot Password
+
+Allows users to request a password reset link.
+
+Module 2 – Dashboard (3 Pages)
+
+Dashboard
+
+Central overview showing learning progress, today's timetable, recent quizzes, AI recommendation preview, and quick actions.
+
+Notifications
+
+Displays reminders, upcoming study sessions, and important alerts.
+
+Global Search
+
+Search across learning spaces, quizzes, and study content.
+
+Module 3 – Learning Management (5 Pages)
+
+Learning Spaces
+
+View and manage all learning spaces or subjects.
+
+Create Learning Space
+
+Form to create a new learning space.
+
+Edit Learning Space
+
+Modify existing learning space details.
+
+Timetable
+
+Weekly study planner with scheduled sessions.
+
+Add Study Schedule
+
+Create or edit a study schedule entry.
+
+Module 4 – Quiz & Assessment (7 Pages)
+
+Quiz Home
+
+Entry page for all quiz-related activities.
+
+Generate Topic Quiz
+
+Select subject, topic, and difficulty before generating a quiz.
+
+Quiz Instructions
+
+Displays rules, duration, and marks before starting.
+
+Quiz Attempt
+
+Interactive question answering interface.
+
+Quiz Result
+
+Shows score, accuracy, and summary.
+
+Quiz Review
+
+Displays each question with correct and selected answers.
+
+Quiz History
+
+Shows previous attempts and performance history.
+
+Module 5 – Analytics (3 Pages)
+
+Analytics Dashboard
+
+Displays charts and overall learning statistics.
+
+Subject Analytics
+
+Shows performance for each subject.
+
+Progress Report
+
+Summarizes study hours, scores, and learning trends.
+
+Module 6 – AI Recommendations (2 Pages)
+
+Recommendations
+
+Lists personalized learning recommendations.
+
+Recommendation Details
+
+Displays explanation, suggested resources, and recommended quizzes.
+
+Module 7 – User Module (3 Pages)
+
+Profile
+
+Displays user profile and statistics.
+
+Edit Profile
+
+Allows updating personal information and profile picture.
+
+Settings
+
+Manage theme, notifications, and logout.
+
+System Pages (3 Pages)
+
+Loading Screen
+
+Skeleton loading screen shown while data is being prepared.
+
+404 Not Found
+
+Displayed when an invalid route is accessed.
+
+Coming Soon
+
+Placeholder for future features.
+
+Summary
+
+Module
+
+Pages
+
+Authentication
+
+4
+
+Dashboard
+
+3
+
+Learning Management
+
+5
+
+Quiz & Assessment
+
+7
+
+Analytics
+
+3
+
+AI Recommendations
+
+2
+
+User
+
+3
+
+System
+
+3
+
+Total Recommended Frontend Pages: 30
+
+Note: This page structure is an implementation recommendation. It expands the project's functional modules into complete frontend screens while keeping the backend and AI integration for later development.

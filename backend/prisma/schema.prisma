@@ -1,0 +1,147 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                     String            @id @default(uuid())
+  name                   String
+  email                  String            @unique
+  password               String
+  role                   String            @default("Computer Science Student")
+  avatar                 String?
+  bio                    String?
+  targetHoursPerWeek     Float             @default(25.0)
+  completedHoursThisWeek Float             @default(0.0)
+  currentStreakDays      Int               @default(1)
+  overallAccuracy        Int               @default(80)
+  createdAt              DateTime          @default(now())
+  updatedAt              DateTime          @updatedAt
+  learningSpaces         LearningSpace[]
+  schedules              Schedule[]
+  quizAttempts           QuizAttempt[]
+  recommendations        Recommendation[]
+  notifications          Notification[]
+}
+
+model LearningSpace {
+  id                 String           @id @default(uuid())
+  userId             String
+  title              String
+  category           String
+  description        String?
+  color              String           @default("#6366f1")
+  totalTopics        Int              @default(0)
+  completedTopics    Int              @default(0)
+  progressPercentage Int              @default(0)
+  lastStudied        String           @default("Just created")
+  createdAt          DateTime         @default(now())
+  updatedAt          DateTime         @updatedAt
+  user               User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  topics             Topic[]
+  quizzes            Quiz[]
+  schedules          Schedule[]
+  recommendations    Recommendation[]
+}
+
+model Topic {
+  id           String        @id @default(uuid())
+  spaceId      String
+  name         String
+  status       String        @default("In Progress") // "Completed", "In Progress", "Needs Review"
+  masteryScore Int           @default(50)
+  createdAt    DateTime      @default(now())
+  space        LearningSpace @relation(fields: [spaceId], references: [id], onDelete: Cascade)
+}
+
+model Schedule {
+  id         String        @id @default(uuid())
+  userId     String
+  spaceId    String
+  spaceTitle String
+  day        String // "Monday", "Tuesday", etc.
+  time       String // "09:00 AM - 10:30 AM"
+  topic      String
+  status     String        @default("Upcoming") // "Upcoming", "Completed"
+  createdAt  DateTime      @default(now())
+  user       User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  space      LearningSpace @relation(fields: [spaceId], references: [id], onDelete: Cascade)
+}
+
+model Quiz {
+  id              String        @id @default(uuid())
+  spaceId         String
+  spaceTitle      String
+  title           String
+  topic           String
+  difficulty      String        @default("Medium")
+  durationMinutes Int           @default(15)
+  totalQuestions  Int           @default(5)
+  isPdfBased      Boolean       @default(false)
+  pdfFileName     String?
+  createdAt       DateTime      @default(now())
+  space           LearningSpace @relation(fields: [spaceId], references: [id], onDelete: Cascade)
+  questions       Question[]
+  attempts        QuizAttempt[]
+}
+
+model Question {
+  id            String   @id @default(uuid())
+  quizId        String
+  question      String
+  optionsJson   String   // JSON string of array of string options
+  correctAnswer Int
+  explanation   String
+  createdAt     DateTime @default(now())
+  quiz          Quiz     @relation(fields: [quizId], references: [id], onDelete: Cascade)
+}
+
+model QuizAttempt {
+  id               String   @id @default(uuid())
+  userId           String
+  quizId           String
+  title            String
+  spaceTitle       String
+  score            Int
+  totalQuestions   Int
+  correctCount     Int
+  wrongCount       Int
+  timeSpentSeconds Int
+  accuracy         Int
+  status           String   // "Passed", "Needs Improvement"
+  createdAt        DateTime @default(now())
+  user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  quiz             Quiz     @relation(fields: [quizId], references: [id], onDelete: Cascade)
+}
+
+model Recommendation {
+  id                   String        @id @default(uuid())
+  userId               String
+  spaceId              String
+  spaceTitle           String
+  topic                String
+  priority             String        @default("Medium") // "High", "Medium", "Low"
+  currentMastery       Int           @default(50)
+  reason               String
+  suggestedActionsJson String        // JSON string of array of string actions
+  recommendedQuizId    String?
+  createdAt            DateTime      @default(now())
+  user                 User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  space                LearningSpace @relation(fields: [spaceId], references: [id], onDelete: Cascade)
+}
+
+model Notification {
+  id        String   @id @default(uuid())
+  userId    String
+  title     String
+  message   String
+  time      String
+  type      String   // "reminder", "quiz", "recommendation"
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}

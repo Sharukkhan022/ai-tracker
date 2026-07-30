@@ -1,0 +1,325 @@
+Product Requirements Document (PRD)
+
+AI Progress EngineVersion 2.0 - Final Draft
+
+1. Executive Summary
+
+AI Progress Engine is an AI-powered web application that helps students plan learning, generate AI quizzes, track progress, and receive personalized recommendations.
+
+2. Product Vision
+
+Measure understanding through AI-assisted assessments instead of only tracking study activity.
+
+3. Product Goals
+
+Learning Spaces
+
+Timetable Planning
+
+AI Quiz Generation
+
+Progress Analytics
+
+AI Recommendations
+
+4. Stakeholders
+
+Students
+
+Project Guide
+
+Development Team
+
+University
+
+5. Target Users
+
+College Students
+
+University Students
+
+Self-learners
+
+Competitive Exam Aspirants
+
+6. Product Scope
+
+In Scope
+
+Authentication
+
+Learning Spaces
+
+Timetable
+
+Topic Quiz
+
+Study Material Quiz (PDF)
+
+Analytics
+
+AI Recommendations
+
+Profile & Settings
+
+Out of Scope
+
+Notes
+
+Desktop Agent
+
+Browser Extension
+
+Messaging
+
+Social Feed
+
+7. Final Modules
+
+Module
+
+Features
+
+User Management
+
+Register, Login, JWT, Profile
+
+Learning Planner
+
+Learning Spaces, Daily & Weekly Timetable
+
+AI Quiz Management
+
+Topic Quiz, PDF Quiz, Quiz History
+
+Progress Tracking & Analytics
+
+Dashboard, Charts, Progress
+
+AI Recommendation System
+
+Weak Topics, Suggestions
+
+Profile & Settings
+
+Theme, Preferences
+
+8. Navigation
+
+Login/Register
+
+Dashboard
+
+Learning Spaces
+
+Timetable
+
+Learning Space Details
+
+Create Quiz
+
+Quiz
+
+Quiz Result
+
+Analytics
+
+Profile & Settings
+
+9. User Workflow
+
+Login → Dashboard → Learning Space → Timetable → Study → Generate Topic/PDF Quiz → Attempt Quiz → Results → Analytics → AI Recommendations
+
+10. Technology Stack
+
+Layer
+
+Technology
+
+Frontend
+
+React.js + JavaScript + Tailwind CSS + shadcn/ui
+
+State
+
+Zustand
+
+Backend
+
+Express.js + Node.js
+
+Database
+
+PostgreSQL + Prisma ORM
+
+Authentication
+
+JWT
+
+AI
+
+Google Gemini API
+
+Uploads
+
+Multer
+
+Charts
+
+Recharts
+
+Tools
+
+Git, GitHub, Postman, VS Code
+
+11. Functional Requirements
+
+FR1
+
+FR2
+
+FR3
+
+FR4
+
+FR5
+
+FR6
+
+FR7
+
+FR8
+
+FR9
+
+FR10
+
+FR11
+
+FR12
+
+FR13
+
+FR14
+
+FR15
+
+FR16
+
+FR17
+
+FR18
+
+FR19
+
+FR20
+
+FR21
+
+FR22
+
+FR23
+
+FR24
+
+12. Non-Functional Requirements
+
+Responsive UI
+
+Secure JWT
+
+REST APIs
+
+Scalable Backend
+
+Reliable Database
+
+Maintainable Code
+
+13. Database Entities
+
+Users
+
+LearningSpaces
+
+Timetables
+
+Quizzes
+
+Questions
+
+QuizAttempts
+
+Progress
+
+Recommendations
+
+14. API Requirements
+
+Authentication
+
+Learning Spaces
+
+Timetable
+
+Quiz
+
+Analytics
+
+Recommendations
+
+15. AI Integration
+
+Gemini API generates quizzes, analyses performance, and recommends revision topics.
+
+16. Error Handling
+
+Invalid Login
+
+Invalid PDF
+
+AI Failure
+
+Database Error
+
+Network Timeout
+
+17. Security
+
+JWT
+
+Password Hashing
+
+Input Validation
+
+Protected Routes
+
+18. Success Metrics
+
+Quiz Completion
+
+Score Improvement
+
+Daily Active Users
+
+Recommendation Usage
+
+19. Risks
+
+AI Quality
+
+API Cost
+
+Internet Dependency
+
+20. Future Roadmap
+
+Mobile App
+
+Desktop App
+
+Advanced Analytics
+
+21. Glossary
+
+Learning Space, Topic Quiz, Study Material Quiz, Progress Analytics, AI Recommendation.

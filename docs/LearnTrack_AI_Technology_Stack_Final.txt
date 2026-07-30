@@ -1,0 +1,153 @@
+AI Progress EngineTechnology Stack & Technical Justification
+
+Version 1.0Modern Full-Stack Web Application
+
+1. Overview
+
+This document describes the recommended technology stack for the AI Progress Engine. The selected technologies are modern, industry-standard, beginner-friendly, and well suited for a medium-level final-year project focused on AI-powered learning, quiz generation, progress tracking, and personalized recommendations.
+
+2. Technology Stack
+
+Layer
+
+Technology
+
+Purpose
+
+Frontend
+
+React.js
+
+Build a dynamic and interactive user interface.
+
+Language
+
+JavaScript (ES6+)
+
+Use one language across the entire application.
+
+State Management
+
+Zustand
+
+Manage global application state efficiently.
+
+Styling
+
+Tailwind CSS
+
+Create a modern, responsive UI quickly.
+
+UI Components
+
+shadcn/ui
+
+Provide reusable professional UI components.
+
+Backend
+
+Express.js
+
+Develop RESTful APIs.
+
+Runtime
+
+Node.js
+
+Run the backend server efficiently.
+
+Database
+
+PostgreSQL
+
+Store structured application data.
+
+ORM
+
+Prisma
+
+Simplify and manage database operations.
+
+Authentication
+
+JWT
+
+Secure user authentication and authorization.
+
+AI
+
+Google Gemini API
+
+Generate quizzes and recommendations.
+
+File Upload
+
+Multer
+
+Handle PDF uploads.
+
+Charts
+
+Recharts
+
+Visualize learning analytics.
+
+Version Control
+
+Git & GitHub
+
+Track source code and versions.
+
+API Testing
+
+Postman
+
+Test backend APIs.
+
+IDE
+
+Visual Studio Code
+
+Develop and debug the project.
+
+3. Technology Justification
+
+React.js: Reusable components, fast rendering, and an excellent ecosystem make it ideal for dashboards and interactive interfaces.
+
+JavaScript: Using JavaScript for both frontend and backend simplifies development and reduces the learning curve.
+
+Zustand: Lightweight state management for authentication, quizzes, learning spaces, and dashboard data with minimal boilerplate.
+
+Tailwind CSS: Rapid development of responsive, consistent, and modern interfaces.
+
+shadcn/ui: Provides accessible and customizable UI components for a professional appearance.
+
+Express.js: A lightweight backend framework ideal for building REST APIs for medium-sized applications.
+
+Node.js: Supports asynchronous programming and integrates seamlessly with Express.
+
+PostgreSQL: Reliable relational database suited to structured educational data.
+
+Prisma: Simplifies database access and schema migrations while improving developer productivity.
+
+JWT: Protects APIs and enables secure stateless authentication.
+
+Google Gemini API: Powers AI quiz generation, performance analysis, and personalized recommendations.
+
+Multer: Processes uploaded PDF study materials securely.
+
+Recharts: Creates interactive charts for analytics dashboards.
+
+Git & GitHub: Enable version control, backup, and collaboration.
+
+Postman: Validates APIs before frontend integration.
+
+Visual Studio Code: Excellent tooling for JavaScript, React, Express, Prisma, and Git.
+
+4. System Architecture
+
+React.js + JavaScript + Tailwind CSS + Zustand                    │                    ▼             REST API (Express.js)                    │      ┌─────────────┼─────────────┐      │             │             │      ▼             ▼             ▼ PostgreSQL   Google Gemini API   JWT      │      ▼   Prisma ORM
+
+5. Why This Stack?
+
+This stack offers an excellent balance between simplicity and capability. JavaScript allows full-stack development with a single language, React and Zustand deliver a responsive user experience, Express.js provides a lightweight backend, Prisma and PostgreSQL ensure reliable data management, and Google Gemini API brings AI-powered quiz generation and recommendations to the platform. Together, these technologies create a scalable, maintainable, and industry-relevant solution for the AI Progress Engine.

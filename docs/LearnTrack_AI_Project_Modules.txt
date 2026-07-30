@@ -1,0 +1,181 @@
+LearnTrack AI - Project Module Classification
+
+This document classifies the LearnTrack AI project into functional modules for academic presentation.
+
+Module 1: Authentication Module
+
+Purpose: Manages user identity and secure access.
+
+Pages: Login, Register
+
+Features:
+
+User Registration
+
+User Login
+
+Password Validation
+
+Session Management
+
+Logout
+
+Protected Access
+
+Inputs: Name, Email, Password
+
+Outputs: User Account, Authenticated Session
+
+Module 2: User Dashboard Module
+
+Purpose: Provides an overview of learning activities.
+
+Pages: Dashboard
+
+Features:
+
+Welcome Message
+
+Learning Progress Summary
+
+Today's Timetable
+
+Recent Quiz Results
+
+Overall Performance
+
+Quick Navigation
+
+Dashboard Widgets:
+
+Total Learning Spaces
+
+Today's Schedule
+
+Total Quizzes
+
+Average Score
+
+Progress Percentage
+
+AI Recommendation Preview
+
+Module 3: Learning Management Module
+
+Purpose: Organizes subjects and study plans.
+
+Pages: Learning Spaces, Timetable
+
+Learning Spaces Features:
+
+Create/Edit/Delete Learning Spaces
+
+Categorize Subjects
+
+Track Progress
+
+Example Subjects: Machine Learning, Python, DBMS, Operating Systems
+
+Timetable Features:
+
+Weekly Study Planner
+
+Add/Edit/Delete Schedule
+
+View Today's Plan
+
+Module 4: Quiz & Assessment Module
+
+Purpose: Conducts quizzes and evaluates performance.
+
+Pages: Topic Quiz, Quiz History
+
+Topic Quiz Features:
+
+Select Subject
+
+Select Topic
+
+Choose Difficulty
+
+Generate Quiz
+
+Attempt Quiz
+
+View Score
+
+Future AI: Gemini-based quiz generation
+
+Quiz History Features:
+
+Previous Quizzes
+
+Scores
+
+Accuracy
+
+Attempt Date
+
+Time Taken
+
+Performance Trends
+
+Module 5: Analytics & AI Module
+
+Purpose: Analyses learning performance and provides recommendations.
+
+Pages: Analytics, Recommendations
+
+Analytics Features:
+
+Subject-wise Performance
+
+Daily/Weekly/Monthly Progress
+
+Quiz Statistics
+
+Charts (Bar, Pie, Line)
+
+Recommendations Features:
+
+Weak Topic Identification
+
+Suggested Study Plan
+
+Recommended Quizzes
+
+Learning Tips
+
+Module 6: User Profile Module
+
+Purpose: Manages user account information.
+
+Pages: Profile
+
+Features:
+
+View/Update Profile
+
+Change Password
+
+Upload Profile Photo
+
+Logout
+
+Stored Information:
+
+Name
+
+Email
+
+Profile Picture
+
+Learning Statistics
+
+Overall Project Architecture
+
+LearnTrack AI├── Authentication Module│   ├── Login│   └── Register├── Dashboard Module│   └── Dashboard├── Learning Management Module│   ├── Learning Spaces│   └── Timetable├── Quiz & Assessment Module│   ├── Topic Quiz│   └── Quiz History├── Analytics & AI Module│   ├── Analytics│   └── Recommendations└── User Profile Module    └── Profile
+
+Module Interaction Flow
+
+Login/Register → Dashboard → Learning Management → Topic Quiz → Quiz History → Analytics → AI Recommendations → Profile
