@@ -1,122 +1,114 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import React from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
-function App() {
-  const [count, setCount] = useState(0)
+// Layouts
+import { AuthLayout } from './components/layout/AuthLayout';
+import { AppLayout } from './components/layout/AppLayout';
 
+// Module 1: Auth
+import { SplashScreen } from './pages/auth/SplashScreen';
+import { LoginPage } from './pages/auth/LoginPage';
+import { RegisterPage } from './pages/auth/RegisterPage';
+import { ForgotPasswordPage } from './pages/auth/ForgotPasswordPage';
+
+// Module 2: Dashboard
+import { DashboardPage } from './pages/dashboard/DashboardPage';
+import { NotificationsPage } from './pages/dashboard/NotificationsPage';
+import { GlobalSearchPage } from './pages/dashboard/GlobalSearchPage';
+
+// Module 3: Learning Management
+import { LearningSpacesPage } from './pages/learning/LearningSpacesPage';
+import { CreateLearningSpacePage } from './pages/learning/CreateLearningSpacePage';
+import { EditLearningSpacePage } from './pages/learning/EditLearningSpacePage';
+import { TimetablePage } from './pages/learning/TimetablePage';
+import { AddSchedulePage } from './pages/learning/AddSchedulePage';
+
+// Module 4: Quiz & Assessment
+import { QuizHomePage } from './pages/quiz/QuizHomePage';
+import { GenerateTopicQuizPage } from './pages/quiz/GenerateTopicQuizPage';
+import { QuizInstructionsPage } from './pages/quiz/QuizInstructionsPage';
+import { QuizAttemptPage } from './pages/quiz/QuizAttemptPage';
+import { QuizResultPage } from './pages/quiz/QuizResultPage';
+import { QuizReviewPage } from './pages/quiz/QuizReviewPage';
+import { QuizHistoryPage } from './pages/quiz/QuizHistoryPage';
+
+// Module 5: Analytics
+import { AnalyticsDashboardPage } from './pages/analytics/AnalyticsDashboardPage';
+import { SubjectAnalyticsPage } from './pages/analytics/SubjectAnalyticsPage';
+import { ProgressReportPage } from './pages/analytics/ProgressReportPage';
+
+// Module 6: AI Recommendations
+import { RecommendationsPage } from './pages/recommendations/RecommendationsPage';
+import { RecommendationDetailsPage } from './pages/recommendations/RecommendationDetailsPage';
+
+// Module 7: User
+import { ProfilePage } from './pages/user/ProfilePage';
+import { EditProfilePage } from './pages/user/EditProfilePage';
+import { SettingsPage } from './pages/user/SettingsPage';
+
+// Module 8: System
+import { LoadingScreen } from './pages/system/LoadingScreen';
+import { NotFoundPage } from './pages/system/NotFoundPage';
+import { ComingSoonPage } from './pages/system/ComingSoonPage';
+
+export default function App() {
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <BrowserRouter>
+      <Routes>
+        {/* Splash Screen */}
+        <Route path="/" element={<SplashScreen />} />
+        <Route path="/splash" element={<SplashScreen />} />
 
-      <div className="ticks"></div>
+        {/* Auth Module (4 Pages) */}
+        <Route element={<AuthLayout />}>
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+        </Route>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+        {/* Main Application Shell (26 Pages) */}
+        <Route element={<AppLayout />}>
+          {/* Module 2: Dashboard */}
+          <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/notifications" element={<NotificationsPage />} />
+          <Route path="/search" element={<GlobalSearchPage />} />
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+          {/* Module 3: Learning Management */}
+          <Route path="/learning-spaces" element={<LearningSpacesPage />} />
+          <Route path="/learning-spaces/new" element={<CreateLearningSpacePage />} />
+          <Route path="/learning-spaces/:id/edit" element={<EditLearningSpacePage />} />
+          <Route path="/timetable" element={<TimetablePage />} />
+          <Route path="/timetable/new" element={<AddSchedulePage />} />
+
+          {/* Module 4: Quiz & Assessment */}
+          <Route path="/quizzes" element={<QuizHomePage />} />
+          <Route path="/quizzes/generate" element={<GenerateTopicQuizPage />} />
+          <Route path="/quizzes/history" element={<QuizHistoryPage />} />
+          <Route path="/quizzes/:id/instructions" element={<QuizInstructionsPage />} />
+          <Route path="/quizzes/:id/attempt" element={<QuizAttemptPage />} />
+          <Route path="/quizzes/:id/result" element={<QuizResultPage />} />
+          <Route path="/quizzes/:id/review" element={<QuizReviewPage />} />
+
+          {/* Module 5: Analytics */}
+          <Route path="/analytics" element={<AnalyticsDashboardPage />} />
+          <Route path="/analytics/subject/:id" element={<SubjectAnalyticsPage />} />
+          <Route path="/analytics/report" element={<ProgressReportPage />} />
+
+          {/* Module 6: AI Recommendations */}
+          <Route path="/recommendations" element={<RecommendationsPage />} />
+          <Route path="/recommendations/:id" element={<RecommendationDetailsPage />} />
+
+          {/* Module 7: User */}
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/profile/edit" element={<EditProfilePage />} />
+          <Route path="/settings" element={<SettingsPage />} />
+
+          {/* Module 8: System Pages */}
+          <Route path="/loading" element={<LoadingScreen />} />
+          <Route path="/coming-soon" element={<ComingSoonPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
-
-export default App
